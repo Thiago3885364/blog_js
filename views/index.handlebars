@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem vindo ao blog NodeJS!</h1>
+  <p class="lead">Site desenvolvido para estudos em NODEJS!</p>
+  <hr class="my-4">
+  <p>Sistema desenvolvido para realizar postagens de conteúdos, a fins de estudar a linguagem!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/usuarios/registro" role="button">Cadastre-se</a>
+  </p>
+</div>
+<hr>
+<h2>Postagens recentes</h2>
+{{#each postagens}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>{{titulo}}</h3>
+            <p>{{descricao}}</p>
+            <a href="/postagem/{{slug}}"><button type="submit" class="btn btn-success">Leia mais</button></a>
+            <hr>
+            <small>Data de publicação: {{data}}</small><br>
+            <small>Categoria: {{categoria.nome}}</small>
+        </div>
+    </div>
+{{else}}
+    <h5>Nenhuma postagem cadastrada!</h5>
+{{/each}}
