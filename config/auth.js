@@ -22,7 +22,7 @@ module.exports = function(passport){
         done(null, usuarios._id);
     });
     passport.deserializeUser((id, done)=>{
-        Usuario.findOne({where: {id:id}}).then((usuarios)=>{
+        Usuario.findOne({_id:id}).then((usuarios)=>{
             done(null, usuarios);
         }).catch((err)=>{
             done(err, null);
